@@ -49,36 +49,6 @@ interview/
 
 ---
 
-## ⚡ Backend Implementation #2: Node.js/Express
-
-### `backend-nodejs/server.js`
-**Purpose**: Main Express application server  
-**Functionality**:
-- RESTful API endpoints for call scheduling
-- Integrates with Mock Call API (port 5000)
-- Runs on port 5001
-- node-cron job (every 10 seconds) to execute scheduled calls
-- Identical functionality to Python backend
-
-### `backend-nodejs/database.js`
-**Purpose**: SQLite database initialization  
-**Functionality**:
-- Creates database tables using SQL queries
-- better-sqlite3 synchronous operations
-- Two tables: `scheduled_calls`, `call_history`
-- Returns database instance for use in server.js
-
-### `backend-nodejs/package.json`
-**Purpose**: Node.js project configuration  
-**Dependencies**:
-- express: ^4.18.2
-- cors: ^2.8.5
-- better-sqlite3: ^9.2.2
-- node-cron: ^3.0.3
-- axios: ^1.6.2
-
----
-
 ## 🎨 Frontend: React Application
 
 ### `frontend/src/index.js`
