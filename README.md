@@ -1,43 +1,88 @@
-# Call Scheduler - Coding Assignment
+# Call Scheduler - Full Stack Application
 
-**Time Limit:** 1 hour
+A complete call scheduling and management system with React frontend and backend (Node.js or Python options).
 
-## Getting Started
+## Architecture
 
-### 1. Start the Mock Call API Server
+Two backend implementations available:
+- **Node.js Backend** (`backend-nodejs/`): Express with SQLite and node-cron (recommended)
+- **Python Backend** (`backend/`): Flask with SQLite and APScheduler
 
-This assignment includes a mock Call API (similar to Twilio) that you'll integrate with.
+**Frontend**: React application (runs on port 3000)  
+**External API**: Mock Call API (provided, runs on port 5000)
 
-```bash
-# Navigate to this directory
-cd interview_assignment
+## Quick Start
 
-# Install dependencies
-pip install -r requirements.txt
+### Node.js Backend (Recommended)
 
-# Start the server
-python api_server.py
-```
+See **SETUP-NODEJS.md** for detailed setup instructions.
 
-The Call API will run on `http://localhost:5000`
+1. **Start Mock Call API** (port 5000):
+   ```bash
+   pip install -r requirements.txt
+   python api_server.py
+   ```
 
-### 2. Read the Assignment
+2. **Start Backend Server** (port 5001):
+   ```bash
+   cd backend-nodejs
+   npm install
+   npm start
+   ```
 
-Open `ASSIGNMENT.md` for the full assignment details.
+3. **Start Frontend** (port 3000):
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
 
-### 3. Read the API Documentation
+### Python Backend
 
-Open `API_DOCUMENTATION.md` to understand the available endpoints.
+See **SETUP.md** for detailed setup instructions.
 
-## What's Provided
+1. **Start Mock Call API** (port 5000):
+   ```bash
+   pip install -r requirements.txt
+   python api_server.py
+   ```
 
-- **Mock Call API** - A working API server that can initiate calls and report status
-- **API Documentation** - Complete endpoint reference
-- **Assignment Brief** - What you need to build
+2. **Start Backend Server** (port 5001):
+   ```bash
+   cd backend
+   python app.py
+   ```
 
-## What You Need to Build
+3. **Start Frontend** (port 3000):
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
 
-Everything else! See `ASSIGNMENT.md` for details.
+## Documentation
+
+- **QUICKSTART.md** - Fastest way to get started
+- **SETUP-NODEJS.md** - Detailed setup guide for Node.js backend
+- **SETUP.md** - Detailed setup guide for Python backend
+- **DESIGN.md** - Architecture decisions and design rationale
+- **ASSIGNMENT.md** - Original assignment requirements
+- **API_DOCUMENTATION.md** - Mock Call API documentation
+
+## Features
+
+- ✅ Schedule calls for future times
+- ✅ Automatic execution via cron job (runs every 10 seconds)
+- ✅ View scheduled calls and manage them
+- ✅ View call history with real-time status updates
+- ✅ Clean, minimalistic UI
+
+## Tech Stack
+
+**Node.js Backend**: Express, SQLite (better-sqlite3), node-cron, axios  
+**Python Backend**: Flask, SQLite (SQLAlchemy), APScheduler  
+**Frontend**: React  
+**Database**: SQLite (embedded, no separate server needed)
 
 ## Testing the API
 
